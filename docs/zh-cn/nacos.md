@@ -20,15 +20,35 @@ php bin/hyperf.php vendor:publish hyperf/nacos
 declare(strict_types=1);
 
 return [
-    // 无法使用 IP 端口形式的开发者，直接配置 url 即可
+    // nacos server url like https://nacos.hyperf.io, Priority is higher than host:port
     // 'url' => '',
+    // The nacos host info
     'host' => '127.0.0.1',
     'port' => 8848,
+    // The nacos account info
     'username' => null,
     'password' => null,
     'guzzle' => [
-        'config' => [],
+        'config' => null,
     ],
+    // 需要使用 hyperf/service-governance-nacos 组件提供之前的服务注册功能
+//    'service' => [
+//        // nacos server url like https://nacos.hyperf.io, Priority is higher than host:port
+//        // 'url' => '',
+//        // The nacos host info
+//        'host' => '127.0.0.1',
+//        'port' => 8848,
+//        'service_name' => 'api',
+//        // The nacos account info
+//        'username' => null,
+//        'password' => null,
+//        'guzzle' => [
+//            'config' => null,
+//        ],
+//        'instance' => [
+//            'heartbeat' => 5
+//        ],
+//    ],
 ];
 
 ```
